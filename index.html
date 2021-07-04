@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+    body {
+  background-color: #f2f2f2;
+}
+
+:root {
+    --header-height: 6rem;
+    --nav-width: 68px;
+    --first-color-light: grey;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: #ffffff;
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 2px 60px 0 rgba(0,0,0,.2);
+    top: -30%;
+    left: -30%;
+    height: 100vh;
+    width: 81px;
+    height: 82rem;
+    padding: .0rem 0rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .7rem 0 .7rem 1.8rem
+}
+
+.nav_logo {
+    position: relative;
+    top: -5rem;
+    color: black;
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    top: -23px;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+.nav-i {
+    position: relative;
+    top: -6%;
+}
+/* .nav_link:hover {
+    color: lightblue;
+} */
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
+.active {
+    color: var(--white-color);
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+span {
+    display: flex;
+    position: absolute;
+    top: 36px;
+    left:14px;
+}
+
+.text{
+    position: relative;
+    top: 0px;
+    left: 108px;
+    width: 78rem;
+}
+
+.label{
+    font-size: 17px;
+    position: absolute;
+    top: 41px;
+    color: grey;
+}
+
+.button {
+    background-color: #ffffff;
+    position: relative;
+    top: 19rem;
+    left: 24rem;
+    height: 20rem;
+    width: 19rem;
+}
+a:focus, a:hover {
+    color: black;
+    text-decoration: underline;
+    background-color: lightblue;
+}
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 2rem)
+    }
+
+    .header {
+        height: calc(var(--header-height) + 1rem);
+        padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+    }
+
+    .header_img {
+        width: 40px;
+        height: 40px
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 1rem 1rem 0 0
+    }
+
+.show {
+    width: calc(var(--nav-width) + 156px)
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 188px)
+}
+}
+</style>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+        
+    </header>
+    <div class="shadow p-3 mb-5 bg-secondary rounded">
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div class="nav-i"> 
+
+                <div class="nav_logo" href="#">
+                    <i class="fas fa-circle" style="font-size:30px";></i>
+                    
+                </div>
+                <a class="nav_link" href="#">
+                    <i class="fas fa-user" style="font-size:30px";></i>
+                    <span><b>Students</b></span>
+                    
+                  </a>
+                
+                <a class="nav_link" href="#">
+                    <i class="fas fa-book" style="font-size:30px";></i>
+                    <span><b>Lesson Plan</b></span>
+                  </a>
+                  <a class="nav_link" href="#">
+                    <i class="fas fa-cog"style="font-size:30px";></i>
+                    <span><b>Settings</b></span>
+                  </a>
+        </div>
+        </nav>
+    </div>
+</div>
+<div class="label">
+<div class="col-sm-6">
+    <a class="nav_link" href="#">
+        <i class="fas fa-caret-left" style="font-size:20px";></i>
+        <p><b>Videos</b></p>
+      </a>
+      <div class="text">
+    <input type="text" class="form-control text" placeholder="Insert url here">
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-light button"><b>upload</b></button>
+</body>
+</html>
